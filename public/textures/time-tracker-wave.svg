@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0E7A4B"/>
+      <stop offset="100%" stop-color="#073923"/>
+    </linearGradient>
+    <radialGradient id="highlight" cx="0.25" cy="0.1" r="0.8">
+      <stop offset="0%" stop-color="#2EE38B" stop-opacity="0.32"/>
+      <stop offset="70%" stop-color="#2EE38B" stop-opacity="0.0"/>
+    </radialGradient>
+    <filter id="softBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.2"/>
+    </filter>
+    <mask id="waveMask">
+      <rect width="800" height="600" fill="white"/>
+      <!-- carve soft corners to mimic inner rounding -->
+      <rect x="0" y="0" width="800" height="600" rx="28" ry="28" fill="black" opacity="0.0"/>
+    </mask>
+  </defs>
+  <rect width="800" height="600" fill="url(#g1)"/>
+
+  <!-- Concentric smooth waves -->
+  <g opacity="0.55" filter="url(#softBlur)" mask="url(#waveMask)">
+    <path d="M-30,460 C120,360 220,320 360,300 C500,280 650,300 860,380 L860,620 L-30,620 Z" fill="#0B583A"/>
+    <path d="M-30,420 C120,320 220,280 360,260 C520,235 690,260 860,340 L860,620 L-30,620 Z" fill="#0D6340"/>
+    <path d="M-30,380 C110,290 230,250 360,230 C540,210 710,230 860,300 L860,620 L-30,620 Z" fill="#0F6E45"/>
+    <path d="M-30,340 C110,260 230,220 360,205 C560,190 730,210 860,270 L860,620 L-30,620 Z" fill="#11774A"/>
+  </g>
+
+  <!-- subtle highlight -->
+  <rect width="800" height="600" fill="url(#highlight)"/>
+</svg>
